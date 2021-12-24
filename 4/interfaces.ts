@@ -5,8 +5,3 @@ export interface Cell {
   called: boolean;
 }
 
-export interface Board {
-  cells: Cell[];
-  won: boolean;
-}
-

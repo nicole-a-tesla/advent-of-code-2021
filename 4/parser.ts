@@ -1,5 +1,6 @@
 import getInputString from "../fetchInputString";
-import {Cell, Board} from "./interfaces";
+import { Cell } from "./interfaces";
+import Board from "./board";
 
 const inputString: string = getInputString("4/input.txt");
 const inputArray: string[] = inputString.split(/\n\s*\n/g);
@@ -31,10 +32,7 @@ const Parser = {
       });
     });
 
-    return {
-      cells: cells,
-      won: false,
-    }
+    return new Board(cells);
   },
 
   parseCell(cellString: string, x: number, y: number): Cell {
